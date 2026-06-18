@@ -71,7 +71,7 @@ export function fromNum(i: number): Position {
     }
 }
 function generateFood() {
-    const holes = positions.value.map(p => toNum(p)).sort()
+    const holes = positions.value.map(p => toNum(p)).sort((a, b) => a - b)
     let random = Math.floor(Math.random() * (rows * columns - holes.length))
     for (const hole of holes) {
         if (random < hole) break
